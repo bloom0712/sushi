@@ -21,6 +21,10 @@
             line-height: 100%;
             letter-spacing: 0%;
             font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sm {
+                font-size: 16rem;
+            }
         }
         &-title {
             text-align: center;
@@ -31,12 +35,35 @@
             letter-spacing: 0%;
             color: #111111;
             font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sm {
+                font-size: 20rem;
+                line-height: 28rem;
+            }
+        }
+        &-box {
+            font-size: 12rem;
+            font-weight: 400;
+            font-style: regular;
+            line-height: 21rem;
+            letter-spacing: 0%;
+            color: #111111;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+            display: none;
+
+            @include sm {
+                display: flex;
+                flex-direction: column;
+            }
         }
         &-description {
             display: flex;
             flex-direction: column;
             align-items: center;
 
+            @include sm {
+                display: none;
+            }
             span {
                 font-size: 14rem;
                 font-weight: 400;
@@ -111,7 +138,13 @@
             left: 16rem;
             background-color: #FF6600;
             @include sp {
-                left: 12rem;
+                left: 20%;
+                top: 48%;
+                width: 50rem;
+                height: 50rem;
+            }
+            @include sm {
+                left: 9%;
             }
             /* Arrow: triangular arrowhead (left) + thick horizontal shaft (right) */
             &::before {
@@ -121,7 +154,7 @@
                 top: 50%;
                 width: 0;
                 height: 0;
-                transform: translate(-100%,-50%);
+                transform: translate(-95%,-50%);
                 border-style: solid;
                 border-width: 10rem 12rem 10rem 0;
                 border-color: transparent #fff transparent transparent;
@@ -141,7 +174,13 @@
             right: 16rem;
             background-color: #FF6600;
             @include sp {
-                right: 12rem;
+                right: 20%;
+                top: 48%;
+                width: 50rem;
+                height: 50rem;
+            }
+            @include sm {
+                right: 9%;
             }
             /* Arrow: thick blocky shaft + triangular arrowhead (matches reference) */
             &::before {
@@ -151,7 +190,7 @@
                 top: 50%;
                 width: 12rem;
                 height: 6rem;
-                transform: translate(-100%, -50%);
+                transform: translate(-95%, -50%);
                 background-color: #fff;
             }
             &::after {

@@ -1,0 +1,42 @@
+@mixin pc {
+    @media screen and (max-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin sp {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media screen and (max-width: 480px) {
+        @content;
+    }
+}
+
+html {
+    font-size: calc(1/1440 * 100vw);
+    @include pc {
+        font-size: calc(1/1440 * 100vw);
+    }
+    @include sp {
+        font-size: calc(1/768 * 100vw);
+    }
+    @include sm {
+        font-size: calc(1/480 * 100vw);
+    }
+}
+
+.container {
+    width: 1440px;
+    width: 100%;
+    margin: auto;
+}
+
+.p-container {
+    max-width: 1080px;
+    width: 100%;
+    margin: auto;
+}

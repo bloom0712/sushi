@@ -1,0 +1,297 @@
+.challenge {
+    padding: 80rem 0;
+    background-color: #F8F0E9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 48rem;
+
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15rem;
+
+        &-question {
+            color: #FF5704;
+            font-size: 20rem;
+            font-weight: 700;
+            font-style: bold;
+            line-height: 100%;
+            letter-spacing: 0%;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+        }
+        &-title {
+            text-align: center;
+            font-size: 36rem;
+            font-weight: 700;
+            font-style: bold;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: #111111;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+        }
+        &-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            span {
+                font-size: 14rem;
+                font-weight: 400;
+                font-style: regular;
+                line-height: 21rem;
+                letter-spacing: 0%;
+                color: #111111;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+            }
+        }
+    }
+    &-diagram {
+        width: 1050rem;
+        display: flex;
+        gap: 45rem;
+        position: relative;
+
+        @include sp {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        &-track {
+            display: flex;
+            gap: 45rem;
+            width: 100%;
+
+            @include sp {
+                gap: 24rem;
+                width: max-content;
+                transition: transform 0.3s ease;
+            }
+
+            @media (min-width: 769px) {
+                .challenge-diagram-content:nth-child(n+4) {
+                    display: none;
+                }
+            }
+        }
+        &-prev,
+        &-next {
+            display: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 48rem;
+            height: 48rem;
+            border-radius: 50%;
+            background-color: var(--g-color-red);
+            color: #fff;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 2;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 0.9;
+            }
+            &:active {
+                opacity: 0.8;
+            }
+
+            @include sp {
+                display: flex;
+            }
+        }
+        &-prev {
+            left: 16rem;
+            background-color: #FF6600;
+            @include sp {
+                left: 12rem;
+            }
+            /* Arrow: triangular arrowhead (left) + thick horizontal shaft (right) */
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0;
+                height: 0;
+                transform: translate(-100%,-50%);
+                border-style: solid;
+                border-width: 10rem 12rem 10rem 0;
+                border-color: transparent #fff transparent transparent;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 12rem;
+                height: 6rem;
+                transform: translateY(-50%);
+                background-color: #fff;
+            }
+        }
+        &-next {
+            right: 16rem;
+            background-color: #FF6600;
+            @include sp {
+                right: 12rem;
+            }
+            /* Arrow: thick blocky shaft + triangular arrowhead (matches reference) */
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 12rem;
+                height: 6rem;
+                transform: translate(-100%, -50%);
+                background-color: #fff;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                width: 0;
+                height: 0;
+                border-style: solid;
+                transform: translateY(-50%);
+                border-width: 10rem 0 10rem 12rem;
+                border-color: transparent transparent transparent #fff;
+            }
+        }
+
+        &-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            gap: 19rem;
+            flex: 1 1 0;
+            min-width: 0;
+
+            @include sp {
+                flex: 0 0 320rem;
+                min-width: 320rem;
+                width: 320rem;
+                box-sizing: border-box;
+            }
+
+            .challenge-diagram-issue {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 20rem;
+
+                img {
+                    width: 60rem;
+                    height: 60rem;
+                }
+                &-title {
+                    font-size: 24rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 35rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+                &-desc {
+                    font-size: 14rem;
+                    font-weight: 400;
+                    font-style: regular;
+                    line-height: 22rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+            }
+            .challenge-diagram-arrows {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 28rem;
+
+                img {
+                    width: 28rem;
+                    height: 38rem;
+                }
+              
+            }
+            .challenge-diagram-solution {
+                position: relative;
+                padding: 31rem 16rem 20rem 16rem;
+                background-color: #fff;
+                max-width: 320rem;
+                border-radius: 30rem;
+                display: flex;
+                flex-direction: column;
+                gap: 12rem;
+                margin-top: 20rem;
+
+                &-title {
+                    font-size: 24rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 35rem;
+                    letter-spacing: 0%; 
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+                &-desc {
+                    font-size: 14rem;
+                    font-weight: 400;
+                    font-style: regular;
+                    line-height: 22rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+                &-mark {
+                    position: absolute;
+                    top: 0;
+                    left: 50%;
+                    background-color: #FFD9C7;
+                    border-radius: 50rem;
+                    transform: translate(-50%, -50%);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 10rem;
+                    padding: 8rem 16rem 8rem 8rem;
+                    box-sizing: border-box;
+
+                    &-icon {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        flex-shrink: 0;
+                        width: 28rem;
+                        height: 28rem;
+                        border-radius: 50%;
+                        background-color: var(--g-color-red);
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23fff' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 13l4 4L19 7'/%3E%3C/svg%3E");
+                        background-size: 16rem 16rem;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                    &-text {
+                        font-size: 18rem;
+                        font-weight: 700;
+                        color: var(--g-color-red);
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                        line-height: 100%;
+                        letter-spacing: 0;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap');
+
+$font-play: "Playfair Display", serif;
+
+:root {
+    --g-color-base: #DDDDDD;
+    --g-color-grey: #D9D9D9;
+    --g-color-red: #FF5704;
+    --g-color-orange: #FFD9C7;
+    --g-color-pink: #F8F0E9;
+    --g-color-text: #231F20;
+    --g-color-white: #FFFFFF;
+    --g-padding-s: 72px;
+}

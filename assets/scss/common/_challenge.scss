@@ -80,28 +80,36 @@
         display: flex;
         gap: 45rem;
         position: relative;
+        isolation: isolate;
 
         @include sp {
             width: 100%;
             max-width: 100%;
-            overflow: hidden;
+            overflow: visible;
         }
 
-        &-track {
-            display: flex;
-            gap: 45rem;
+        &-swiper {
             width: 100%;
-
-            @include sp {
-                gap: 24rem;
-                width: max-content;
-                transition: transform 0.3s ease;
-            }
+            position: relative;
+            z-index: 1;
 
             @media (min-width: 769px) {
-                .challenge-diagram-content:nth-child(n+4) {
-                    display: none;
+                overflow: visible;
+
+                .swiper-wrapper {
+                    display: flex;
+                    gap: 45rem;
+                    transform: none !important;
                 }
+                .swiper-slide {
+                    width: auto;
+                    flex: 1 1 0;
+                    min-width: 0;
+                }
+            }
+
+            @include sp {
+                overflow: hidden;
             }
         }
         &-prev,
@@ -120,7 +128,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            z-index: 2;
+            z-index: 9999;
             transition: opacity 0.2s ease;
 
             &:hover {
@@ -132,6 +140,7 @@
 
             @include sp {
                 display: flex;
+                pointer-events: auto;
             }
         }
         &-prev {
@@ -217,9 +226,10 @@
             min-width: 0;
 
             @include sp {
-                flex: 0 0 320rem;
-                min-width: 320rem;
-                width: 320rem;
+                flex: 0 0 auto;
+                min-width: 0;
+                width: 100%;
+                padding: 0;
                 box-sizing: border-box;
             }
 

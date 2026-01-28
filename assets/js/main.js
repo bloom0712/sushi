@@ -33,88 +33,56 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Challenge diagram carousel (max-width 768px): cycle 2nd→3rd→1st→2nd…, Next always flows left
-    const diagram = document.querySelector('.challenge-diagram');
-    const diagramTrack = document.querySelector('.challenge-diagram-track');
+    // Challenge diagram: Swiper carousel when max-width < 768px
+    const diagramSwiperEl = document.querySelector('.challenge-diagram-swiper');
     const diagramPrev = document.querySelector('.challenge-diagram-prev');
     const diagramNext = document.querySelector('.challenge-diagram-next');
+    const diagramBreakpoint = window.matchMedia('(max-width: 768px)');
+    let diagramSwiper = null;
 
-    if (diagram && diagramTrack && diagramPrev && diagramNext) {
-        const originalSlides = diagramTrack.querySelectorAll('.challenge-diagram-content');
-        const count = originalSlides.length;
-        if (count > 0) {
-            // Add many clones so the loop can run smoothly for a long time (30 slides = 29 steps per wrap)
-            for (let r = 0; r < 9; r++) {
-                for (let i = 0; i < count; i++) {
-                    diagramTrack.appendChild(originalSlides[i].cloneNode(true));
-                }
-            }
+    function initDiagramSwiper() {
+        if (!diagramSwiperEl || !diagramPrev || !diagramNext || typeof Swiper === 'undefined') return;
+        if (diagramSwiper) return; // prevent double init
+
+        diagramSwiper = new Swiper('.challenge-diagram-swiper', {
+            // On mobile: one slide centered, neighbors peek at sides
+            slidesPerView: 1,
+            centeredSlides: true,
+            spaceBetween: 16,
+            loop: true,
+            loopAdditionalSlides: 3,  // extra clones for smooth looping
+            breakpoints: {
+                // Desktop: restore original layout (all three visible)
+                769: {
+                    slidesPerView: 1,
+                    centeredSlides: false,
+                    spaceBetween: 45,
+                },
+            },
+            navigation: {
+                prevEl: '.challenge-diagram-prev',
+                nextEl: '.challenge-diagram-next',
+            },
+        });
+    }
+
+    function destroyDiagramSwiper() {
+        if (diagramSwiper) {
+            diagramSwiper.destroy(true, true);
+            diagramSwiper = null;
         }
+    }
 
-        const slides = diagramTrack.querySelectorAll('.challenge-diagram-content');
-        const total = slides.length;
-        const maxIndex = total - 1; // use 1..maxIndex so Next always flows left; wrap maxIndex→1
-        const TRANSITION_CSS = 'transform 0.3s ease';
-
-        let currentIndex = 1; // start: 2nd centered
-
-        function isSp() {
-            return window.matchMedia('(max-width: 768px)').matches;
+    function handleDiagramBreakpoint() {
+        if (diagramBreakpoint.matches) {
+            initDiagramSwiper();
+        } else {
+            destroyDiagramSwiper();
         }
+    }
 
-        function updateCarousel() {
-            if (!isSp() || total === 0) {
-                diagramTrack.style.transform = '';
-                return;
-            }
-            const containerWidth = diagram.getBoundingClientRect().width;
-            const slideWidth = slides[0].getBoundingClientRect().width;
-            let gap = 0;
-            if (total > 1) {
-                const r0 = slides[0].getBoundingClientRect();
-                const r1 = slides[1].getBoundingClientRect();
-                gap = r1.left - r0.right;
-            }
-            const offsetPx = currentIndex * (slideWidth + gap) + slideWidth / 2 - containerWidth / 2;
-            diagramTrack.style.transform = `translateX(-${offsetPx}px)`;
-        }
-
-        function goNext() {
-            if (!isSp()) return;
-            const from = currentIndex;
-            currentIndex = from >= maxIndex ? 1 : from + 1;
-            const wrap = from >= maxIndex;
-            if (wrap) {
-                diagramTrack.style.transition = 'none';
-                updateCarousel();
-                diagramTrack.offsetHeight;
-                diagramTrack.style.transition = TRANSITION_CSS;
-            } else {
-                diagramTrack.style.transition = TRANSITION_CSS;
-                updateCarousel();
-            }
-        }
-
-        function goPrev() {
-            if (!isSp()) return;
-            const from = currentIndex;
-            currentIndex = from <= 1 ? maxIndex : from - 1;
-            const wrap = from <= 1;
-            if (wrap) {
-                diagramTrack.style.transition = 'none';
-                updateCarousel();
-                diagramTrack.offsetHeight;
-                diagramTrack.style.transition = TRANSITION_CSS;
-            } else {
-                diagramTrack.style.transition = TRANSITION_CSS;
-                updateCarousel();
-            }
-        }
-
-        diagramPrev.addEventListener('click', goPrev);
-        diagramNext.addEventListener('click', goNext);
-
-        updateCarousel();
-        window.addEventListener('resize', updateCarousel);
+    if (diagramSwiperEl && diagramPrev && diagramNext) {
+        handleDiagramBreakpoint();
+        diagramBreakpoint.addEventListener('change', handleDiagramBreakpoint);
     }
 });

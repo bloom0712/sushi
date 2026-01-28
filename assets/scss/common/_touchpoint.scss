@@ -1,0 +1,551 @@
+.touchpoint {
+    padding: 120rem 0;
+    width: 1050rem;
+
+    @include sp {
+        width: 100%;
+        padding: 60rem 24rem;
+    }
+
+    &-title {
+        display: flex;
+        flex-direction: column;
+        gap: 22rem;
+        align-items: center;
+        margin-bottom: 48rem;
+        &-text {
+            display: flex;
+
+            @include sp {
+                flex-direction: column;
+                align-items: center;
+                gap: 10rem;
+            }
+            span {
+                font-size: 20rem;
+                font-weight: 700;
+                font-style: bold;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: var(--g-color-red);
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                @include sm {
+                    font-size: 16rem;
+                }
+            }
+        }
+        &-desc {
+            font-size: 36rem;
+            font-weight: 700;
+            font-style: bold;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: #111111;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+            text-align: center;
+
+            @include sm {
+                font-size: 20rem;
+            }
+        }
+        &-exp {
+            display: none;
+            font-size: 12rem;
+            font-style: regular;
+            font-weight: 400;
+            line-height: 21rem;
+            letter-spacing: 0%;
+            color: #111111;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sp {
+                display: block;
+            }
+        }
+        &-experience {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            @include sp {
+                display: none;
+            }
+            span {
+                font-size: 14rem;
+                font-style: regular;
+                font-weight: 400;
+                line-height: 21rem;
+                letter-spacing: 0%;
+                color: #111111;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+            }
+        }
+    }
+    &-content {
+        width: 1074rem;
+        display: flex;
+        gap: 30rem;
+        position: relative;
+        padding: 0 81rem;
+        margin-bottom: 10rem;
+
+        @include sp {
+            flex-direction: column;
+            width: 100%;
+            padding: 0 24rem;
+        }
+
+        &-line {
+            position: absolute;
+            top: 42%;
+            right: 4%;
+            width: 75%;
+            height: 30px;
+            margin-bottom: 17rem;
+            z-index: -1;
+            img {
+                width: 100%;
+                height: auto;
+
+                @include sp {
+                    display: none;
+                }
+            }
+        }
+
+        &-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 20rem;
+            align-items: center;
+            justify-content: center;
+            margin-right: 30rem;
+            margin-bottom: 50rem;
+
+            @include sm {
+                margin-right: 0;
+                margin-bottom: 0;
+            }
+
+            // On small screens, swap the visual order so img appears before text
+            @include sp {
+                flex-direction: row-reverse;
+            }
+            &-title {
+                display: flex;
+                flex-direction: column;
+                gap: 10rem;
+                align-items: center;
+                justify-content: center;
+
+                @include sp {
+                    flex-direction: row;
+                    gap: 0;
+                }
+                span {
+                    font-size: 24rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 30rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    text-align: center;
+
+                    @include sp {
+                        font-size: 30rem;
+                    }
+                    @include sm {
+                        font-size: 24rem;
+                    }
+                }
+            }
+            img {
+                width: 131rem;
+                height: 138rem;
+                object-fit: cover;
+                transform: scaleX(-1);
+
+                @include sp {
+                    width: 100rem;
+                    height: 108rem;
+                }
+                @include sm {
+                    width: 68rem;
+                    height: 72rem;
+                }
+            }
+        }
+        &-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12rem;
+
+            &-header {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                @include sp {
+                    flex-direction: row-reverse;
+                    gap: 4rem;
+                }
+            }
+
+            &-text {
+                background-color: #FFD9C7;
+                padding:  8rem 10rem;
+                border-radius: 5rem;
+                font-size: 14rem;
+                font-weight: 700;
+                font-style: bold;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: var(--g-color-red);
+                margin-right: 0;
+            }
+            &-title {
+                display: flex;
+                gap: 10rem;
+                align-items: center;
+                &-icon {
+                    width: 24rem;
+                    height: 24rem;
+                    border-radius: 50%;
+                    background-color: #FF5704;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span {
+                        font-size: 18rem;
+                        font-weight: 700;
+                        font-style: bold;
+                        line-height: 24rem;
+                        letter-spacing: 0%;
+                        color: #fff;
+                        border-radius: 50%;
+                        font-family: Helvetica, sans-serif;
+                    }
+                }
+                &-text {
+                    font-size: 24rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 40rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+            }
+            &-box {
+                width: 220rem;
+                border-radius: 8rem;
+                border: 2px solid #DDDDDD;
+                padding: 14rem 12rem;
+                display: flex;
+                flex-direction: column;
+                gap: 10rem;
+                cursor: pointer;
+                background-color: #fff;
+                &:hover {
+                    background-color: #FFD9C7;
+                }
+                @include sp {
+                    width: 80%;
+                }
+                @include sm {
+                    width: 100%;
+                }
+
+                &-title {
+                    display: flex;
+                    align-items: center;
+                    gap: 10rem;
+                    img {
+                        width: 30rem;
+                        height: 28rem;
+                        display: block;
+
+                        @include sp {
+                            width: 36rem;
+                            height: 33rem;
+                        }
+                        @incldue sm {
+                            width: 30rem;
+                            height: 28rem;
+                        }
+                    }
+                    span {
+                        font-size: 14rem;
+                        font-weight: 700;
+                        font-style: bold;
+                        line-height: 18rem;
+                        letter-spacing: 0%;
+                        color: #111111;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                        @include sp {
+                            font-size: 18rem;
+                            line-height: 22rem;
+                        }
+                        @include sm {
+                            font-size: 14rem;
+                            line-height: 18rem;
+                        }
+                    }
+                }
+                &-content {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 8rem;
+
+                    @include sp {
+                        flex-direction: row;
+                        gap: 0;
+                    }
+                    span {
+                        font-size: 12rem;
+                        font-weight: 400;
+                        font-style: regular;
+                        line-height: 16rem;
+                        letter-spacing: 0%;
+                        color: #111111;
+                        white-space: nowrap;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+    
+                        @include sp {
+                            font-size: 15rem;
+                        }
+                        @include sm {
+                            font-size: 12rem;
+                        }
+                    }
+                }
+            }
+            &-more {
+                font-size: 14rem;
+                padding: 4rem 8rem;
+                font-weight: 700;
+                font-style: bold;
+                line-height: 18rem;
+                letter-spacing: 0%;
+                color: #FF5704;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                background-color: #FFD9C7;
+                border-radius: 4rem;
+            }
+            &-arrow {
+                width: 29rem;
+                height: 49rem;
+                display: block;
+
+                @include sp {
+                    display: none;
+                }
+            }
+            &-arrow1 {
+                width: 29rem;
+                height: 79rem;
+                display: block;
+
+                @include sp {
+                    display: none;
+                }
+            }
+        }
+    }
+    &-flow {
+        width: 1074rem;
+        padding: 20rem 160rem;
+        background-color: #F0EDEA;
+        border-radius: 20rem;
+        display: flex;
+        align-items: center;
+        gap: 48rem;
+
+        @include sp {
+            flex-direction: column;
+            width: 100%;
+            padding: 20rem 24rem;
+            border-radius: 0;
+            width: 100%;
+        }
+        @include sm {
+            gap: 20rem;
+        }
+
+        &-exp {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10rem;
+
+            @include sp {
+                flex-direction: row-reverse;
+                gap: 20rem;
+            }
+
+            span {
+                font-size: 24rem;
+                font-weight: 700;
+                font-style: bold;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: #111111;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                white-space: nowrap;
+
+                @include sp {
+                    font-size: 30rem;
+                }
+                @include sm {
+                    font-size: 24rem;
+                }
+            }
+            img {
+                width: 180rem;
+                height: 179rem;
+
+                @include sp {
+                    width: 100rem;
+                    height: 108rem;
+                }
+                @include sm {
+                    width: 78rem;
+                    height: 78rem;
+                }
+            }
+        }
+        &-point {
+            display: flex;
+            flex-direction: column;
+            gap: 12rem;
+
+            &-title {
+                display: flex;
+                align-items: center;
+                gap: 10rem;
+
+                @include sp {
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                &-content {
+                    display: flex;
+                    align-items: center;
+                    gap: 10rem;
+                }
+
+                &-icon {
+                    width: 24rem;
+                    height: 24rem;
+                    border-radius: 50%;
+                    background-color: #FF5704;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span {
+                        font-size: 18rem;
+                        font-weight: 700;
+                        font-style: bold;
+                        line-height: 24rem;
+                        letter-spacing: 0%;
+                        color: #fff;
+                        border-radius: 50%;
+                        font-family: Helvetica, sans-serif;
+                    }
+                }
+                &-text {
+                    font-size: 24rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 40rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    white-space: nowrap;
+                }
+                &-market {
+                    font-size: 14rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    color: #FF5704;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    padding: 8rem 10rem;
+                    background-color: #FFD9C7;
+                    border-radius: 5rem;
+                    white-space: nowrap;
+                }
+                &-markets {
+                    display: flex;
+                    align-items: center;
+                    gap: 10rem;
+                }
+            }
+            &-desc {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 10rem;
+                background-color: #fff;
+                border-radius: 8rem;
+                padding: 14rem;
+
+                &-crm {
+                    display: flex;
+                    align-items: center;
+                    gap: 10rem;
+                    img {
+                        width: 40rem;
+                        height: 38rem;
+                        display: block;
+                    }
+                    span {
+                        font-size: 16rem;
+                        font-weight: 700;
+                        font-style: bold;
+                        line-height: 21rem;
+                        letter-spacing: 0%;
+                        color: #111111;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    }
+                }
+                &-net {
+                    font-size: 12rem;
+                    font-weight: 400;
+                    font-style: regular;
+                    line-height: 16rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    @include sp {
+                        display: none;
+                    }
+                }
+                &-nets {
+                    display: none;
+                    font-size: 12rem;
+                    font-weight: 400;
+                    font-style: regular;
+                    line-height: 16rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    @include sp {
+                        display: block;
+                        font-size: 15rem;
+                    }
+                    @include sm {
+                        font-size: 12rem;
+                    }
+                }
+            }
+        }
+    }
+}

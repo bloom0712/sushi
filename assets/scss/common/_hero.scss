@@ -50,7 +50,7 @@
                     display: block;
                 }
                 @include sm {
-                    height: 192rem;
+                    height: 230rem;
                 }
             }
 
@@ -376,77 +376,62 @@
                 }
             }
         }
-        &-logos {
+            &-logos {
             width: 100%;
             max-width: 100%;
             display: flex;
+            flex-direction: column;
+            gap: 20rem;
             overflow-x: hidden;
 
-            @include sp {
-                flex-direction: column;
-                gap: 20rem;
+            &-repeat1 {
+                display: flex;
+                @include sp {
+                    display: none;
+                }
             }
-            @include sm {
-                min-width: 0;
+
+            &-repeat2 {
+                display: none;
+                @include sp {
+                    display: flex;
+                }
             }
 
             &-item {
-                width: 50%;
+                width: 100%;
                 display: flex;
-                flex-direction: column;
-                gap: 20rem;
+                gap: 40rem;
 
-                @include sp {
-                    width: 100%;
-                }
-
-                .hero-enterprises-logos-content {
-                    display: flex;
-                    align-items: center;
-                    gap: 25rem;
+                a {
+                    margin-right: 40rem;
+                    display: inline-block;
 
                     @include sp {
-                        gap: 55rem;
+                        margin-left: 10rem;
                     }
                     @include sm {
-                        gap: 35rem;
-                        transform: translateX(-30rem);
-                    }
-
-                    img {
-                        width: 130rem;
-                        height: 35rem;
-                        display: block;
-
-                        @include sm {
-                            width: 75rem;
-                            height: 22rem;
-                        }
-
-                        &:hover {
-                            opacity: 0.7;
-                        }
+                        margin-left: 0rem;
                     }
                 }
-            }
-            &-left {
-                transform: translateX(-70rem);
 
-                @include sp {
-                    transform: translateX(-55rem);
-                }
-                @include sm {
-                    transform: none;
-                }
-            }
-            &-right {
-                transform: translateX(40rem);
+                img {
+                    width: 130rem;
+                    height: 35rem;
+                    display: inline-block;
 
-                @include sp {
-                    transform: translateX(-55rem);
-                }
-                @include sm {
-                    transform: none;
+                    @include sp {
+                        width: 90rem;
+                        height: 26rem;
+                    }
+                    @include sm {
+                        width: 75rem;
+                        height: 22rem;
+                    }
+
+                    &:hover {
+                        opacity: 0.7;
+                    }
                 }
             }
         }

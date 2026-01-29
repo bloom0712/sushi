@@ -2501,7 +2501,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: start;
-  gap: 35rem;
+  gap: 25rem;
 }
 @media screen and (max-width: 768px) {
   .market-line {

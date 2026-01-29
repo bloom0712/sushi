@@ -1,0 +1,245 @@
+.question {
+    padding: 120rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48rem;
+
+    @include sm {
+        gap: 32rem;
+        padding: 60rem 0;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12rem;
+
+        &-title {
+            font-size: 20rem;
+            font-weight: 700;
+            font-style: bold;
+            line-height: 100%;
+            letter-spacing: 0%;
+            color: #FF5704;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sp {
+                font-size: 18rem;
+            }
+            @include sm {
+                font-size: 16rem;
+            }
+        }
+        &-desc {
+            display: flex;
+
+            @include sp {
+                flex-direction: column;
+                align-items: center;
+            }
+            span {
+                font-size: 36rem;
+                font-weight: 700;
+                font-style: bold;
+                line-height: 100%;
+                letter-spacing: 0%;
+                color: #111111;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                @include sp {
+                    font-size: 32rem;
+                    line-height: 36rem;
+                }
+                @include sm {
+                    font-size: 20rem;
+                    line-height: 24rem;
+                }
+            }
+        }
+    }
+    &-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20rem;
+
+        &-item {
+            padding: 16rem 18rem;
+            border: 2px solid #EEEEEE;
+            border-radius: 8rem;
+
+            &-title {
+                display: flex;
+                align-items: center;
+                gap: 10rem;
+                padding: 13rem 0;
+                width: 1044rem;
+                border-bottom: 1px solid #EEEEEE;
+
+                @include sp {
+                    width: 557rem;
+                }
+                @include sm {
+                    width: 342rem;
+                }
+
+                .question-title-first {
+                    font-size: 38rem;
+                    font-weight: 700;
+                    font-style: bold;
+                    line-height: 100%;
+                    letter-spacing: 0%;
+                    color: #FF5704;
+                    font-family: Arial, sans-serif;
+
+                    @include sm {
+                        font-size: 28rem;
+                    }
+                }
+                .question-title-second {
+                    display: flex;
+                    @include sp {
+                        flex-direction: column;
+                    }
+                    span {
+                        font-size: 20rem;
+                        font-weight: 700;
+                        font-style: bold;
+                        line-height: 21rem;
+                        letter-spacing: 0%;
+                        color: #111111;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                        @include sm {
+                            font-size: 18rem;
+                        }
+                    }
+                }
+            }
+            &-desc {
+                width: 1044rem;
+                padding: 12rem 0;
+                @include sp {
+                    width: 557rem;
+                }
+                @include sm {
+                    width: 342rem;
+                }
+                span {
+                    font-size: 14rem;
+                    font-style: regular;
+                    line-height: 21rem;
+                    letter-spacing: 0%;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                    
+                    @include sm {
+                        font-size: 12rem;
+                        line-height: 18rem;
+                    }
+                }
+            }
+        }
+
+    }
+    &-btn {
+        padding: 15rem 30rem;
+        border: 2px solid #FF5704;
+        background-color: #fff;
+        border-radius: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10rem;
+
+        @include sm {
+            display: none;
+        }
+
+        &:hover {
+            opacity: 0.7;
+        }
+
+        .btn-text {
+            font-size: 20rem;
+            line-height: 32rem;
+            font-weight: 700;
+            font-style: bold;
+            color: #111111;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+            font-weight: 700;
+            letter-spacing: 0%;
+            white-space: nowrap;
+        }
+        
+        .btn-icon-arrow {
+            width: 18rem;
+            height: 18rem;
+            border-radius: 50%;
+            background-color: #FF5704;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: visible;
+            position: relative;
+
+            .icon-arrow {
+                width: 4rem;
+                height: 2rem;
+                background-color: #fff;
+            }
+            .icon-triangle {
+                width: 0;
+                height: 0;
+                border-style: solid;
+                border-width: 4rem 0 4rem 4rem;
+                border-color: transparent transparent transparent #fff;
+            }
+        }
+        .btn-icon-download {
+            width: 20rem;
+            height: 20rem;
+            background-color: #FFD9C7;
+            border-radius: 50%; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .icon-download {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+
+                &-btn {
+                    position: relative;
+                    width: 5rem;
+                    height: 5rem;
+                    background-color: var(--g-color-red);
+                    top: -1rem;
+                    
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        top: 4rem;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 0;
+                        height: 0;
+                        border-style: solid;
+                        border-width: 6rem 6rem 0 6rem;
+                        border-color: var(--g-color-red) transparent transparent transparent;
+                    }
+                }
+                
+                &-box {
+                    width: 8rem;
+                    height: 2rem;
+                    background-color: var(--g-color-red);
+                    margin-top: 3rem;
+                }
+            }
+        }
+    }
+}

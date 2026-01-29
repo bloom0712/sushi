@@ -114,3 +114,30 @@ var swiper = new Swiper(".solutionSwiper", {
         prevEl: ".solutionSwiper .swiper-button-prev",
     }
 });
+
+var swiper = new Swiper(".newsSwiper", {
+    slidesPerView: 'auto',
+    spaceBetween: "30rem",
+    speed: 1000, // Smooth transition speed (milliseconds)
+    loop: true,
+    loopedSlides: 5, // Number of slides to loop (should match or exceed your slide count)
+    autoplay: {
+        delay: 2000, // No delay between slides
+        disableOnInteraction: false, // Continue autoplay after user interaction
+        pauseOnMouseEnter: false, // Continue even when hovering
+    },
+    freeMode: {
+        enabled: true,
+        sticky: false,
+    },
+    allowTouchMove: true,
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".newsSwiper .swiper-button-next",
+        prevEl: ".newsSwiper .swiper-button-prev",
+    }
+});

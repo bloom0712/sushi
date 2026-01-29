@@ -1,0 +1,312 @@
+.news {
+    display: flex;
+    flex-direction: column;
+    gap: 120rem;
+
+    @include sm {
+        gap: 60rem;
+    }
+
+    &-item {
+        width: 100%;
+
+        &-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18rem;
+            margin-bottom: 48rem;
+
+            &-title {
+                font-size: 20rem;
+                font-weight: 700;
+                color: #FF5704;
+                line-height: 100%;
+                letter-spacing: 0%;
+                font-style: bold;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                @include sm {
+                    font-size: 16rem;
+                }
+            }
+            &-desc {
+                display: flex;
+                align-items: center;
+
+                @include sp {
+                    flex-direction: column;
+                }
+
+                span {
+                    font-size: 36rem;
+                    line-height: 100%;
+                    font-weight: 700;
+                    letter-spacing: 0%;
+                    font-style: bold;
+                    color: #111111;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                    @include sm {
+                        font-size: 20rem;
+                    }
+                }
+            }
+        }
+        .newsSwiper {
+            position: relative;
+            overflow: hidden;
+
+            .swiper-button-prev,
+            .swiper-button-next {
+                border: none;
+                cursor: pointer;
+                padding: 0;
+                width: 50rem;
+                height: 50rem;
+                border-radius: 50%;
+                background-color: #FF6600;
+                color: transparent;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                z-index: 10;
+                transition: opacity 0.2s ease;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                &::after {
+                    content: none;
+                }
+                &:hover {
+                    opacity: 0.9;
+                }
+                &:active {
+                    opacity: 0.8;
+                }
+            }
+            .swiper-button-prev {
+                left: 9%;
+                /* Left arrow: triangle + shaft */
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 0;
+                    height: 0;
+                    transform: translate(-95%, -50%);
+                    border-style: solid;
+                    border-width: 10rem 12rem 10rem 0;
+                    border-color: transparent #fff transparent transparent;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 12rem;
+                    height: 6rem;
+                    transform: translateY(-50%);
+                    background-color: #fff;
+                }
+            }
+            .swiper-button-next {
+                right: 9%;
+                /* Right arrow: shaft + triangle */
+                &::before {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 12rem;
+                    height: 6rem;
+                    transform: translate(-95%, -50%);
+                    background-color: #fff;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    transform: translateY(-50%);
+                    border-width: 10rem 0 10rem 12rem;
+                    border-color: transparent transparent transparent #fff;
+                }
+            }
+            .swiper-wrapper {
+                .swiper-slide {
+                    width: 400rem;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 12rem;
+
+                    @include sm {
+                        width: 322rem;
+                    }
+                    .news-item-img {
+                        width: 400rem;
+                        height: 246rem;
+                        border-radius: 12rem;
+                        display: block;
+
+                        @include sm {
+                            width: 322rem;
+                            height: 198rem;
+                        }
+                    }
+                    .news-item-date {
+                        font-size: 14rem;
+                        line-height: 20rem;
+                        font-weight: 400;
+                        font-style: regular;
+                        letter-spacing: 0%;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                        color: #111111;
+                    }
+                    .news-item-context {
+                        width: 400rem;
+                        font-size: 18rem;
+                        font-style: bold;
+                        line-height: 24rem;
+                        font-weight: 700;
+                        letter-spacing: 0%;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                        @include sm {
+                            width: 322rem;
+                            font-size: 16rem;
+                            line-height: 22rem;
+                        }
+                    }
+                    .news-item-list {
+                        display: flex;
+                        gap: 6rem;
+                        span {
+                            font-size: 14rem;
+                            line-height: 20rem;
+                            font-weight: 400;
+                            font-style: regular;
+                            letter-spacing: 0%;
+                            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                            color: #FF5704;
+                            background-color: #FFD9C7;
+                            padding: 4rem 6rem;
+                            border-radius: 4rem;
+                        }
+                    }
+                }
+            }
+        }
+        &-btn {
+            margin: auto;
+            margin-top: 48rem;
+            padding: 15rem 30rem;
+            border: 1px solid #FF5704;
+            background-color: #fff;
+            border-radius: 7px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10rem;
+            width: 288rem;
+
+            @include sp {
+                padding: 16rem 15rem;
+            }
+            @include sm {
+                padding: 12rem 30rem;
+            }
+
+            &:hover {
+                opacity: 0.7;
+            }
+
+            .btn-text {
+                font-size: 20rem;
+                line-height: 32rem;
+                font-weight: 700;
+                font-style: bold;
+                color: #111111;
+                font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                font-weight: 700;
+                letter-spacing: 0%;
+                white-space: nowrap;
+            }
+            
+            .btn-icon-arrow {
+                width: 18rem;
+                height: 18rem;
+                border-radius: 50%;
+                background-color: #FF5704;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: visible;
+                position: relative;
+
+                .icon-arrow {
+                    width: 4rem;
+                    height: 2rem;
+                    background-color: #fff;
+                }
+                .icon-triangle {
+                    width: 0;
+                    height: 0;
+                    border-style: solid;
+                    border-width: 4rem 0 4rem 4rem;
+                    border-color: transparent transparent transparent #fff;
+                }
+            }
+            .btn-icon-download {
+                width: 20rem;
+                height: 20rem;
+                background-color: #FFD9C7;
+                border-radius: 50%; 
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                .icon-download {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 2rem;
+
+                    &-btn {
+                        position: relative;
+                        width: 5rem;
+                        height: 5rem;
+                        background-color: var(--g-color-red);
+                        top: -1rem;
+                        
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 4rem;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            width: 0;
+                            height: 0;
+                            border-style: solid;
+                            border-width: 6rem 6rem 0 6rem;
+                            border-color: var(--g-color-red) transparent transparent transparent;
+                        }
+                    }
+                    
+                    &-box {
+                        width: 8rem;
+                        height: 2rem;
+                        background-color: var(--g-color-red);
+                        margin-top: 3rem;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,166 @@
+.infra {
+    padding: 120rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48rem;
+
+    @include sm {
+        gap: 28rem;
+        padding: 60rem 0;
+    }
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12rem;
+        &-title {
+            font-size: 20rem;
+            font-weight: 700;
+            color: #FF5704;
+            line-height: 100%;
+            letter-spacing: 0%;
+            font-style: bold;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sm {
+                font-size: 16rem;
+            }
+        }
+        &-text {
+            font-size: 36rem;
+            font-weight: 700;
+            color: #111111;
+            line-height: 100%;
+            letter-spacing: 0%;
+            font-style: bold;
+            font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+            @include sm {
+                font-size: 20rem;
+            }
+        }
+    }
+    &-item {
+        width: 1080rem;
+        display: flex;
+        align-items: center;
+        gap: 36rem;
+
+        @include sp {
+            width: 100%;
+            max-width: 100%;
+            flex-direction: column;
+        }
+
+        &-content {
+
+            .infra-item-header {
+                display: flex;
+                align-items: center;
+                gap: 20rem;
+
+                @include sp {
+                    flex-direction: column;
+                }
+                &-number {
+                    width: 72rem;
+                    height: 72rem;
+                    border-radius: 50%;
+                    background-color: #FF5704;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    @include sm {
+                        width: 26rem;
+                        height: 26rem;
+                    }
+
+                    span {
+                        font-size: 44rem;
+                        font-weight: 700;
+                        color: #FFFFFF;
+                        line-height: 100%;
+                        letter-spacing: 0%;
+                        font-style: bold;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                        @include sm {
+                            font-size: 25rem;
+                            margin-bottom: 4rem;
+                        }
+                    }
+                }
+                &-desc {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+
+                    @include sp {
+                        align-items: center;
+                    }
+                    span {
+                        font-size: 32rem;
+                        font-weight: 700;
+                        color: #111111;
+                        line-height: 40rem;
+                        letter-spacing: 0%;
+                        font-style: bold;
+                        font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+
+                        @include sm {
+                            font-size: 20rem;
+                        }
+                    }
+                }
+            }
+            &-desc {
+                width: 604rem;
+                @include sm {
+                    width: 342rem;
+                }
+                span {
+                    font-size: 18rem;
+                    font-weight: 400;
+                    color: #111111;
+                    line-height: 24rem;
+                    letter-spacing: 0%;
+                    font-style: regular;
+                    font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+                }
+            }
+        }
+        &-img {
+            width: 440rem;
+            height: 328rem;
+            border-radius: 20rem;
+            background-color: #F0EDEA;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include sm {
+                width: 342rem;
+                height: 255rem;
+            }
+
+            img {
+                width: 289rem;
+                height: 268rem;
+                display: block;
+
+                @include sm {
+                    width: 200rem;
+                    height: 185rem;
+                }
+            }
+        }
+    }
+    &-item-reverse {
+        @include sp {
+            flex-direction: column-reverse;
+        }
+    }
+}

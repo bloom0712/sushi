@@ -2255,7 +2255,17 @@ html {
   gap: 42rem;
   align-items: center;
   justify-content: center;
+}
+.market-first {
   margin: 120rem 0 120rem 0;
+}
+@media screen and (max-width: 480px) {
+  .market-first {
+    margin: 60rem 0 60rem 0;
+  }
+}
+.market-second {
+  margin: 0;
 }
 @media screen and (max-width: 768px) {
   .market {
@@ -2265,7 +2275,6 @@ html {
 }
 @media screen and (max-width: 480px) {
   .market {
-    margin: 60rem 0 60rem 0;
     gap: 22rem;
   }
 }

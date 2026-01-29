@@ -8,7 +8,17 @@
     gap: 42rem;
     align-items: center;
     justify-content: center;
-    margin: 120rem 0 120rem 0;
+
+    &-first {
+        margin: 120rem 0 120rem 0;
+
+        @include sm {
+            margin: 60rem 0 60rem 0;
+        }
+    }
+    &-second {
+        margin: 0;
+    }
 
     @include sp {
         flex-direction: column;
@@ -16,7 +26,6 @@
     }
 
     @include sm {
-        margin: 60rem 0 60rem 0;
         gap: 22rem;
     }
 

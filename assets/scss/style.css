@@ -1979,4 +1979,702 @@ html {
   .touchpoint-flow-point-desc-nets {
     font-size: 12rem;
   }
+}
+
+.solution-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13rem;
+  margin-bottom: 60rem;
+}
+@media screen and (max-width: 768px) {
+  .solution-title {
+    margin-bottom: 20rem;
+  }
+}
+.solution-title-header {
+  font-size: 20rem;
+  font-style: bold;
+  line-height: 100%;
+  font-weight: 700;
+  color: #FF5704;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+.solution-title-desc {
+  font-size: 36rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: var(--g-color-text);
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .solution-title-desc {
+    font-size: 30rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution-title-desc {
+    font-size: 20rem;
+  }
+}
+.solution-title-text {
+  display: block;
+  font-size: 36rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: var(--g-color-text);
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .solution-title-text {
+    display: none;
+  }
+}
+.solution-title-text-sp {
+  display: none;
+  font-size: 30rem;
+  line-height: 36rem;
+  font-weight: 700;
+  font-style: bold;
+  color: var(--g-color-text);
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  text-align: center;
+}
+@media screen and (max-width: 768px) {
+  .solution-title-text-sp {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution-title-text-sp {
+    font-size: 20rem;
+    line-height: 24rem;
+  }
+}
+.solution .solutionSwiper {
+  position: relative;
+  overflow: hidden;
+}
+.solution .solutionSwiper .swiper-button-prev,
+.solution .solutionSwiper .swiper-button-next {
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  width: 50rem;
+  height: 50rem;
+  border-radius: 50%;
+  background-color: #FF6600;
+  color: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.solution .solutionSwiper .swiper-button-prev::after,
+.solution .solutionSwiper .swiper-button-next::after {
+  content: none;
+}
+.solution .solutionSwiper .swiper-button-prev:hover,
+.solution .solutionSwiper .swiper-button-next:hover {
+  opacity: 0.9;
+}
+.solution .solutionSwiper .swiper-button-prev:active,
+.solution .solutionSwiper .swiper-button-next:active {
+  opacity: 0.8;
+}
+.solution .solutionSwiper .swiper-button-prev {
+  left: 12%;
+  /* Left arrow: triangle + shaft */
+}
+.solution .solutionSwiper .swiper-button-prev::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  transform: translate(-95%, -50%);
+  border-style: solid;
+  border-width: 10rem 12rem 10rem 0;
+  border-color: transparent #fff transparent transparent;
+}
+.solution .solutionSwiper .swiper-button-prev::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12rem;
+  height: 6rem;
+  transform: translateY(-50%);
+  background-color: #fff;
+}
+.solution .solutionSwiper .swiper-button-next {
+  right: 12%;
+  /* Right arrow: shaft + triangle */
+}
+.solution .solutionSwiper .swiper-button-next::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 12rem;
+  height: 6rem;
+  transform: translate(-95%, -50%);
+  background-color: #fff;
+}
+.solution .solutionSwiper .swiper-button-next::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  transform: translateY(-50%);
+  border-width: 10rem 0 10rem 12rem;
+  border-color: transparent transparent transparent #fff;
+}
+.solution .solutionSwiper .swiper-wrapper .swiper-slide {
+  width: 820rem;
+  background-color: #FFD9C7;
+  border-radius: 30rem;
+  padding: 80rem 70rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20rem;
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide {
+    width: 530rem;
+    padding: 40rem 30rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide {
+    width: 300rem;
+    height: 294rem;
+    padding: 32rem 22rem;
+  }
+}
+.solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-title {
+  font-size: 36rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: #111111;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-title {
+    font-size: 30rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-title {
+    font-size: 20rem;
+  }
+}
+.solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-desc {
+  display: block;
+  font-size: 16rem;
+  line-height: 100%;
+  font-weight: 400;
+  font-style: regular;
+  color: #111111;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-desc {
+    font-size: 14rem;
+    display: none;
+  }
+}
+.solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-desc-sp {
+  display: none;
+  font-size: 14rem;
+  line-height: 18rem;
+  font-weight: 400;
+  font-style: regular;
+  color: #111111;
+  letter-spacing: 0%;
+  text-align: center;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-desc-sp {
+    display: block;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-desc-sp {
+    font-size: 12rem;
+    line-height: 16rem;
+  }
+}
+.solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-img {
+  width: 679rem;
+  height: 361rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media screen and (max-width: 768px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-img {
+    width: 450rem;
+    height: 240rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .solution .solutionSwiper .swiper-wrapper .swiper-slide .solution-item-img {
+    width: 256rem;
+    height: 136rem;
+  }
+}
+
+.market {
+  background-image: url("/assets/img/s6_1.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 86rem 172rem;
+  display: flex;
+  gap: 42rem;
+  align-items: center;
+  justify-content: center;
+  margin: 120rem 0 120rem 0;
+}
+@media screen and (max-width: 768px) {
+  .market {
+    flex-direction: column;
+    padding: 60rem 40rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market {
+    margin: 60rem 0 60rem 0;
+    gap: 22rem;
+  }
+}
+.market-contact {
+  padding: 43rem 40rem;
+  background-color: #fff;
+  border-radius: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 20rem;
+}
+@media screen and (max-width: 768px) {
+  .market-contact {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-contact {
+    padding: 20rem 24rem;
+  }
+}
+.market-contact-logo {
+  width: 180px;
+  height: 84px;
+  display: block;
+}
+@media screen and (max-width: 480px) {
+  .market-contact-logo {
+    width: 142rem;
+    height: 66rem;
+  }
+}
+.market-contact-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+@media screen and (max-width: 768px) {
+  .market-contact-content {
+    align-items: center;
+  }
+}
+.market-contact-content-text1 {
+  display: block;
+  font-size: 25rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .market-contact-content-text1 {
+    display: none;
+  }
+}
+.market-contact-content-text2 {
+  font-size: 52rem;
+  line-height: 66rem;
+  font-weight: 900;
+  font-style: black;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 768px) {
+  .market-contact-content-text2 {
+    text-align: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-contact-content-text2 {
+    font-size: 28rem;
+    line-height: 42rem;
+  }
+}
+.market-contact-content-text1-sp {
+  display: none;
+  text-align: center;
+  font-size: 18rem;
+  line-height: 24rem;
+  font-weight: 700;
+  font-style: bold;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .market-contact-content-text1-sp {
+    display: block;
+  }
+}
+.market-contact-content-text3 {
+  width: 522rem;
+  font-size: 14rem;
+  line-height: 21rem;
+  font-weight: 400;
+  font-style: regular;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .market-contact-content-text3 {
+    width: 294rem;
+  }
+}
+.market-contact-actions {
+  display: flex;
+  gap: 12rem;
+}
+@media screen and (max-width: 768px) {
+  .market-contact-actions {
+    width: 100%;
+    flex-direction: column;
+  }
+}
+.market-contact-actions .market-actions-btn {
+  padding: 15rem 30rem;
+  border: 1px solid #000;
+  color: var(--g-color-text);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+}
+@media screen and (max-width: 768px) {
+  .market-contact-actions .market-actions-btn {
+    padding: 16rem 15rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-contact-actions .market-actions-btn {
+    padding: 12rem 55rem;
+  }
+}
+.market-contact-actions .market-actions-btn:hover {
+  opacity: 0.7;
+}
+.market-contact-actions .market-actions-btn .btn-text {
+  font-size: 20rem;
+  line-height: 32rem;
+  font-weight: 700;
+  font-style: bold;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0%;
+}
+.market-contact-actions .market-actions-btn .btn-icon-arrow {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+.market-contact-actions .market-actions-btn .btn-icon-arrow .icon-arrow {
+  width: 4rem;
+  height: 2rem;
+  background-color: var(--g-color-red);
+}
+.market-contact-actions .market-actions-btn .btn-icon-arrow .icon-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4rem 0 4rem 4rem;
+  border-color: transparent transparent transparent var(--g-color-red);
+}
+.market-contact-actions .market-actions-btn .btn-icon-download {
+  width: 20rem;
+  height: 20rem;
+  background-color: #FFD9C7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.market-contact-actions .market-actions-btn .btn-icon-download .icon-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.market-contact-actions .market-actions-btn .btn-icon-download .icon-download-btn {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--g-color-red);
+  top: -1rem;
+}
+.market-contact-actions .market-actions-btn .btn-icon-download .icon-download-btn::before {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6rem 6rem 0 6rem;
+  border-color: var(--g-color-red) transparent transparent transparent;
+}
+.market-contact-actions .market-actions-btn .btn-icon-download .icon-download-box {
+  width: 8rem;
+  height: 2rem;
+  background-color: var(--g-color-red);
+  margin-top: 3rem;
+}
+.market-contact-actions .market-actions-arrow {
+  background-color: var(--g-color-red);
+  color: #fff;
+  border: none;
+}
+.market-contact-actions .market-actions-download {
+  background-color: #fff;
+  border: 1px solid var(--g-color-red);
+  color: var(--g-color-text);
+}
+.market-contact-actions .market-actions-download .btn-icon-download {
+  width: 28rem;
+  height: 28rem;
+}
+.market-line {
+  padding: 43rem 28rem;
+  border-radius: 30rem;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 35rem;
+}
+@media screen and (max-width: 768px) {
+  .market-line {
+    align-items: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-line {
+    padding: 20rem 24rem;
+  }
+}
+.market-line-img {
+  width: 376rem;
+  height: 211rem;
+  border-radius: 12rem;
+  display: block;
+}
+@media screen and (max-width: 768px) {
+  .market-line-img {
+    width: 550rem;
+    height: 303rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-line-img {
+    width: 294rem;
+    height: 165rem;
+  }
+}
+.market-line-title {
+  display: block;
+  font-size: 14rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .market-line-title {
+    display: none;
+  }
+}
+.market-line-title-sp {
+  font-size: 14rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  display: none;
+}
+@media screen and (max-width: 480px) {
+  .market-line-title-sp {
+    display: block;
+  }
+}
+.market-line-text {
+  font-size: 26rem;
+  line-height: 100%;
+  font-weight: 700;
+  font-style: bold;
+  color: #222222;
+  letter-spacing: 0%;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+}
+@media screen and (max-width: 480px) {
+  .market-line-text {
+    font-size: 20rem;
+  }
+}
+.market-line-btn {
+  padding: 15rem 25rem;
+  border: 1px solid #FF5704;
+  background-color: #fff;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10rem;
+  width: 50%;
+}
+@media screen and (max-width: 768px) {
+  .market-line-btn {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .market-line-btn {
+    padding: 16rem 15rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .market-line-btn {
+    padding: 12rem 55rem;
+  }
+}
+.market-line-btn:hover {
+  opacity: 0.7;
+}
+.market-line-btn .btn-text {
+  font-size: 20rem;
+  line-height: 32rem;
+  font-weight: 700;
+  font-style: bold;
+  color: #111111;
+  font-family: "Noto Sans CJK JP", "Noto Sans JP", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0%;
+  white-space: nowrap;
+}
+.market-line-btn .btn-icon-arrow {
+  width: 18rem;
+  height: 18rem;
+  border-radius: 50%;
+  background-color: #FF5704;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+  position: relative;
+}
+.market-line-btn .btn-icon-arrow .icon-arrow {
+  width: 4rem;
+  height: 2rem;
+  background-color: #fff;
+}
+.market-line-btn .btn-icon-arrow .icon-triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 4rem 0 4rem 4rem;
+  border-color: transparent transparent transparent #fff;
+}
+.market-line-btn .btn-icon-download {
+  width: 20rem;
+  height: 20rem;
+  background-color: #FFD9C7;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.market-line-btn .btn-icon-download .icon-download {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+.market-line-btn .btn-icon-download .icon-download-btn {
+  position: relative;
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--g-color-red);
+  top: -1rem;
+}
+.market-line-btn .btn-icon-download .icon-download-btn::before {
+  content: "";
+  position: absolute;
+  top: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 6rem 6rem 0 6rem;
+  border-color: var(--g-color-red) transparent transparent transparent;
+}
+.market-line-btn .btn-icon-download .icon-download-box {
+  width: 8rem;
+  height: 2rem;
+  background-color: var(--g-color-red);
+  margin-top: 3rem;
 }/*# sourceMappingURL=style.css.map */

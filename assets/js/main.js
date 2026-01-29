@@ -86,3 +86,31 @@ document.addEventListener('DOMContentLoaded', function() {
         diagramBreakpoint.addEventListener('change', handleDiagramBreakpoint);
     }
 });
+
+var swiper = new Swiper(".solutionSwiper", {
+    slidesPerView: 'auto',
+    spaceBetween: "40rem",
+    centeredSlides: true,
+    speed: 1000, // Smooth transition speed (milliseconds)
+    loop: true,
+    loopedSlides: 3, // Number of slides to loop (should match or exceed your slide count)
+    autoplay: {
+        delay: 2000, // No delay between slides
+        disableOnInteraction: false, // Continue autoplay after user interaction
+        pauseOnMouseEnter: false, // Continue even when hovering
+    },
+    freeMode: {
+        enabled: true,
+        sticky: false,
+    },
+    allowTouchMove: true,
+    grabCursor: true,
+    pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+    },
+    navigation: {
+        nextEl: ".solutionSwiper .swiper-button-next",
+        prevEl: ".solutionSwiper .swiper-button-prev",
+    }
+});
